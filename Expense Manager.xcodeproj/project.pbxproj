@@ -47,6 +47,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B19E82223BB1EF60086045B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0B81420D23B9D3F00030157E /* ButtonExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0B19E82323BB1F220086045B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B8141F623B9CC0C0030157E /* ViewController.swift */,
+				0B81420923B9CD5B0030157E /* HomeViewController.swift */,
+				0B81421123B9F0300030157E /* DataShowViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0B19E82423BB1F390086045B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B8141F823B9CC0C0030157E /* Main.storyboard */,
+				0B81420023B9CC140030157E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B19E82523BB1F810086045B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				0B8141F223B9CC0C0030157E /* AppDelegate.swift */,
+				0B8141F423B9CC0C0030157E /* SceneDelegate.swift */,
+				0B81420F23B9E0190030157E /* CustomTableViewCell.swift */,
+				0B8141FE23B9CC140030157E /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		0B8141E623B9CC0B0030157E = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +104,12 @@
 		0B8141F123B9CC0C0030157E /* Expense Manager */ = {
 			isa = PBXGroup;
 			children = (
-				0B8141F223B9CC0C0030157E /* AppDelegate.swift */,
-				0B8141F423B9CC0C0030157E /* SceneDelegate.swift */,
-				0B8141F623B9CC0C0030157E /* ViewController.swift */,
-				0B81420923B9CD5B0030157E /* HomeViewController.swift */,
-				0B8141F823B9CC0C0030157E /* Main.storyboard */,
-				0B8141FE23B9CC140030157E /* Assets.xcassets */,
-				0B81420023B9CC140030157E /* LaunchScreen.storyboard */,
+				0B19E82523BB1F810086045B /* Support */,
+				0B19E82423BB1F390086045B /* View */,
+				0B19E82323BB1F220086045B /* ViewControllers */,
+				0B19E82223BB1EF60086045B /* Extension */,
 				0B81420323B9CC140030157E /* Info.plist */,
 				0B8141FB23B9CC0C0030157E /* Expense_Manager.xcdatamodeld */,
-				0B81420D23B9D3F00030157E /* ButtonExtension.swift */,
-				0B81420F23B9E0190030157E /* CustomTableViewCell.swift */,
-				0B81421123B9F0300030157E /* DataShowViewController.swift */,
 			);
 			path = "Expense Manager";
 			sourceTree = "<group>";

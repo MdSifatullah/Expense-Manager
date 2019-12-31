@@ -8,11 +8,10 @@
 
 import UIKit
 import CoreData
-  var item: [NSManagedObject] = []
+ 
 class HomeViewController: UIViewController {
     
-  
-
+    var isCheck : Bool = true
     @IBOutlet weak var nameTextFIeld: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var expenseTextField: UITextField!
@@ -23,28 +22,25 @@ class HomeViewController: UIViewController {
         saveBtn.designButton(borderWidth: 0.5, borderColor: #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1))
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Expense")
-        
-        do {
-            try item = context.fetch(request)
-        } catch  {
-            print(error)
+    @IBAction func onClickSegmentController(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            isCheck = true
+        }else {
+            isCheck = false
         }
+        print("Select: \(isCheck)")
     }
-
-
+   
     @IBAction func onClickSave(_ sender: Any) {
     
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Expense", in: context)
         let expense = NSManagedObject(entity: entity!, insertInto: context)
-        
+        print(isCheck)
         expense.setValue(nameTextFIeld.text, forKey: "name")
         expense.setValue(expenseTextField.text, forKey: "expense")
+        expense.setValue(isCheck, forKey: "type")
         do {
             try context.save()
             let alert = UIAlertController(title: "✓", message: "Data Saved Successfully", preferredStyle: .alert)
@@ -64,8 +60,14 @@ class HomeViewController: UIViewController {
         self.viewDidAppear(true)
         nameTextFIeld.text = ""
         expenseTextField.text = ""
+        
+        self.viewWillAppear(true)
        
     }
-
+    
+    
+    
 
 }
+
+
